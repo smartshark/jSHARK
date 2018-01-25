@@ -41,3 +41,8 @@ MongoClientURI uri = new MongoClientURI("mongodb://<user>:<password>@<host>:<por
 MongoClient mongoClient = new MongoClient(uri);
 final Datastore datastore = morphia.createDatastore(mongoClient, "<database_name>");
 ```
+
+
+Limitations
+===========
+Currently, as Morphia does not support GridFS, we do not provide access to the Mynbou Data files via Models.
