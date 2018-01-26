@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 
-@Entity("commit")
+@Entity(value = "commit", noClassnameStored = true)
 public class Commit {
     @Id
     @Property("_id")

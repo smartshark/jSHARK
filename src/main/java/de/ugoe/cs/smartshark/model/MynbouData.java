@@ -25,7 +25,7 @@ import org.mongodb.morphia.annotations.Property;
 /**
  * @author Fabian Trautsch
  */
-@Entity("mynbou_data")
+@Entity(value = "mynbou_data", noClassnameStored = true)
 public class MynbouData {
     @Id
     @Property("_id")

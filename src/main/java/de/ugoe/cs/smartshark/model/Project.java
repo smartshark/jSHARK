@@ -21,7 +21,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
-@Entity("project")
+@Entity(value = "project", noClassnameStored = true)
 public class Project {
     @Id
     @Property("_id")

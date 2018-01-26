@@ -25,7 +25,7 @@ import org.mongodb.morphia.annotations.Property;
 /**
  * @author Fabian Trautsch
  */
-@Entity("vcs_system")
+@Entity(value = "vcs_system", noClassnameStored = true)
 public class VCSSystem {
     @Id
     @Property("_id")

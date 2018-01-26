@@ -24,7 +24,7 @@ import org.mongodb.morphia.annotations.Property;
 /**
  * @author Fabian Trautsch
  */
-@Entity("file")
+@Entity(value = "file", noClassnameStored = true)
 public class File {
     @Id
     @Property("_id")

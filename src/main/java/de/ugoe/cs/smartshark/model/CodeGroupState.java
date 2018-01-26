@@ -26,7 +26,7 @@ import org.mongodb.morphia.annotations.Property;
 /**
  * @author Fabian Trautsch
  */
-@Entity("code_group_state")
+@Entity(value = "code_group_state", noClassnameStored = true)
 public class CodeGroupState {
     @Id
     @Property("_id")

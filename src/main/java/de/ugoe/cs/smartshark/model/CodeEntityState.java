@@ -8,7 +8,7 @@ import org.mongodb.morphia.annotations.Property;
 import java.util.List;
 import java.util.Map;
 
-@Entity("code_entity_state")
+@Entity(value = "code_entity_state", noClassnameStored = true)
 public class CodeEntityState {
     @Id
     @Property("_id")

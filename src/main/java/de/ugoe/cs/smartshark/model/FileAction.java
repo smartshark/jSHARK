@@ -24,7 +24,7 @@ import org.mongodb.morphia.annotations.Property;
 /**
  * @author Fabian Trautsch
  */
-@Entity("file_action")
+@Entity(value = "file_action", noClassnameStored = true)
 public class FileAction {
     @Id
     @Property("_id")

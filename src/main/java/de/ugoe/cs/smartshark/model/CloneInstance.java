@@ -25,7 +25,7 @@ import org.mongodb.morphia.annotations.Property;
 /**
  * @author Fabian Trautsch
  */
-@Entity("clone_instance")
+@Entity(value = "clone_instance", noClassnameStored = true)
 public class CloneInstance {
     @Id
     @Property("_id")
