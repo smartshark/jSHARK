@@ -38,7 +38,6 @@ public class CommitChanges {
     @Property("new_commit_id")
     private ObjectId newCommitId;
 
-    @Embedded("changes")
     private Map<ObjectId, Map<String, Integer>> classification;
 
     public CommitChanges() {
