@@ -46,6 +46,9 @@ public class TestState {
     @Property("commit_id")
     private ObjectId commitId;
 
+    @Property("execution_time")
+    private Float executionTime;
+
 
     private Map<String, String> metrics = new HashMap<>();
 
@@ -92,6 +95,14 @@ public class TestState {
 
     public void setCommitId(ObjectId commitId) {
         this.commitId = commitId;
+    }
+
+    public Float getExecutionTime() {
+        return executionTime;
+    }
+
+    public void setExecutionTime(Float executionTime) {
+        this.executionTime = executionTime;
     }
 
     public Map<String, String> getMetrics() {

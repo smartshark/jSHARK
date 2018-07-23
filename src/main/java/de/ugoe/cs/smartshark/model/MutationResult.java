@@ -29,7 +29,10 @@ public class MutationResult {
     @Property("mutation_id")
     private ObjectId mutationId;
 
+    @Property("num_calls")
     private Long numCalls = null;
+
+    @Property("call_depth")
     private Long callDepth = null;
 
     private String result;
