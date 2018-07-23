@@ -29,6 +29,9 @@ public class MutationResult {
     @Property("mutation_id")
     private ObjectId mutationId;
 
+    private Long numCalls = null;
+    private Long callDepth = null;
+
     private String result;
 
     public MutationResult() { }
@@ -36,6 +39,13 @@ public class MutationResult {
     public MutationResult(ObjectId mutationId, String result) {
         this.mutationId = mutationId;
         this.result = result;
+    }
+
+    public MutationResult(ObjectId mutationId, String result, Long numCalls, Long callDepth) {
+        this.mutationId = mutationId;
+        this.result = result;
+        this.numCalls = numCalls;
+        this.callDepth = callDepth;
     }
 
     public ObjectId getMutationId() {
@@ -54,6 +64,22 @@ public class MutationResult {
         this.result = result;
     }
 
+    public Long getNumCalls() {
+        return numCalls;
+    }
+
+    public void setNumCalls(Long numCalls) {
+        this.numCalls = numCalls;
+    }
+
+    public Long getCallDepth() {
+        return callDepth;
+    }
+
+    public void setCallDepth(Long callDepth) {
+        this.callDepth = callDepth;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if(!(obj instanceof MutationResult)) {
@@ -68,6 +94,8 @@ public class MutationResult {
         return new EqualsBuilder()
                 .append(mutationId, otherNode.mutationId)
                 .append(result, otherNode.result)
+                .append(numCalls, otherNode.numCalls)
+                .append(callDepth, otherNode.callDepth)
                 .isEquals();
     }
 
@@ -76,6 +104,8 @@ public class MutationResult {
         return new HashCodeBuilder(17, 31)
                 .append(mutationId)
                 .append(result)
+                .append(numCalls)
+                .append(callDepth)
                 .toHashCode();
     }
 
@@ -84,6 +114,8 @@ public class MutationResult {
         return MoreObjects.toStringHelper(this)
                 .add("mutation_id", mutationId)
                 .add("result", result)
+                .add("num_calls", numCalls)
+                .add("call_depth", callDepth)
                 .toString();
     }
 }
