@@ -50,7 +50,8 @@ public class Commit {
 
     private Map<String, String> labels;
 
-
+    @Property("code_entity_states")
+    private List<ObjectId> codeEntityStates;
 
 
     public ObjectId getId() {
@@ -163,5 +164,9 @@ public class Commit {
 
     public void setLabels(Map<String, String> labels) {
         this.labels = labels;
+    }
+
+    public List<ObjectId> getCodeEntityStates() {
+        return codeEntityStates;
     }
 }
