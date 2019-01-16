@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
@@ -55,9 +56,10 @@ public class CFAState {
     @Property("fixes_ids")
     private Set<ObjectId> fixesIds = new HashSet<>();
 
-    @Property("factors")
-    private Map<String, ObjectId> factors = new LinkedHashMap<>();
+    @Embedded("factors")
+    private Map<String, Map<String, Double>> factors = new LinkedHashMap<>();
 
+    
 	public ObjectId getId() {
 		return id;
 	}
@@ -114,11 +116,11 @@ public class CFAState {
 		this.fixesIds = fixesIds;
 	}
 
-	public Map<String, ObjectId> getFactors() {
+	public Map<String, Map<String, Double>> getFactors() {
 		return factors;
 	}
 
-	public void setFactors(Map<String, ObjectId> factors) {
+	public void setFactors(Map<String, Map<String, Double>> factors) {
 		this.factors = factors;
 	}
 
