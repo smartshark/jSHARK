@@ -26,4 +26,3 @@ deploy:
     on:
       repo: smartshark/jSHARK
       tags: true
-    name: "$project_version"
