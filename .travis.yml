@@ -9,7 +9,8 @@ before_install:
 
 
 before_deploy:
-  - export project_version=$(mvn help:evaluate -N -Dexpression=project.version|grep -v '\[')
+  - printf 'VER\t${project.version}' | mvn help:evaluate | grep '^VER' | cut -f2
+  - export project_version=$(printf 'VER\t${project.version}' | mvn help:evaluate | grep '^VER' | cut -f2)
 
 deploy:
   - provider: script
