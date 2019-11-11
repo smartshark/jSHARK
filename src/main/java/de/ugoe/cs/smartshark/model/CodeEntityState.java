@@ -5,6 +5,8 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
 
@@ -56,6 +58,17 @@ public class CodeEntityState {
 
     private Map<String, Double> metrics;
 
+    public static String calculateIdentifier(String longName, ObjectId commitId, ObjectId fileId) throws NoSuchAlgorithmException {
+        String concat = longName + commitId.toString() + fileId.toString();
+        MessageDigest mDigest = MessageDigest.getInstance("SHA1");
+        byte[] result = mDigest.digest(concat.getBytes());
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < result.length; i++) {
+            sb.append(Integer.toString((result[i] & 0xff) + 0x100, 16).substring(1));
+        }
+
+        return sb.toString();
+    }
 
     public ObjectId getId() {
         return id;
