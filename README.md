@@ -17,9 +17,9 @@ Then you need to integrate the installed library and morphia as a dependency to 
 ```xml
 <dependencies>
     <dependency>
-        <groupId>de.ugoe.cs</groupId>
+        <groupId>io.github.smartshark</groupId>
         <artifactId>jSHARK</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.4</version>
     </dependency>
     <dependency>
         <groupId>org.mongodb.morphia</groupId>
