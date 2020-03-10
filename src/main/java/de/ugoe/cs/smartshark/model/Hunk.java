@@ -119,7 +119,7 @@ public class Hunk {
         this.linesManual = linesManual;
     }
     
-    public Map<String,List<Integer>> getVerified() {
+    public Map<String,List<Integer>> getLinesVerified() {
         return linesVerified;
     }
         
