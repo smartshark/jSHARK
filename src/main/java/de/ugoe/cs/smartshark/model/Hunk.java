@@ -16,6 +16,8 @@
 
 package de.ugoe.cs.smartshark.model;
 
+import java.util.List;
+import java.util.Map;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
@@ -45,7 +47,13 @@ public class Hunk {
     @Property("old_lines")
     private Integer oldLines;
 
-    private String content;
+    private String content;    
+    
+    @Property("lines_manual")
+    private Map<String,Map<String,List<Integer>>> linesManual;
+       
+    @Property("lines_verified")
+    private Map<String,List<Integer>> linesVerified;
 
     public ObjectId getId() {
         return id;
@@ -101,5 +109,21 @@ public class Hunk {
 
     public void setContent(String content) {
         this.content = content;
+    }
+    
+    public Map<String,Map<String,List<Integer>>> getLinesManual() {
+        return linesManual;
+    }
+        
+    public void setLinesManual(Map<String,Map<String,List<Integer>>> linesManual) {
+        this.linesManual = linesManual;
+    }
+    
+    public Map<String,List<Integer>> getLinesVerified() {
+        return linesVerified;
+    }
+        
+    public void setLinesVerified(Map<String,List<Integer>> linesVerified) {
+        this.linesVerified = linesVerified;
     }
 }
