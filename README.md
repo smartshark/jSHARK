@@ -10,7 +10,7 @@ How To Use
 At first, the library needs to be installed in your local maven repository via 
 
 ```bash
-gradle install
+mvn install
 ```
 
 Then you need to integrate the installed library and morphia as a dependency to your project
