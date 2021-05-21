@@ -41,14 +41,14 @@ jobs:
           server-id: ossrh
           server-username: SONATYPE_USERNAME
           server-password: SONATYPE_PASSWORD
-          gpg-private-key: ${{ secrets.GPG_KEYNAME }}
+          gpg-private-key: ${{ secrets.MAVEN_GPG_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
       - name: Publish to Maven Central Repository
         run: mvn --batch-mode clean deploy -DskipTests=true -Prelease
         env:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
