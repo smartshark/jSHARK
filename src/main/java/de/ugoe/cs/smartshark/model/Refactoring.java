@@ -35,6 +35,7 @@ public class Refactoring {
     private RefactoringState state;
     @Embedded("parent_commit_ce_states")
     private List<RefactoringState> parentStates;
+    private String detection_tool;
 
     public Refactoring() {
         parentStates = Lists.newArrayList();
@@ -86,6 +87,14 @@ public class Refactoring {
 
     public void setParentStates(List<RefactoringState> parentStates) {
         this.parentStates = parentStates;
+    }
+
+    public String getDetectionTool() {
+        return this.detection_tool;
+    }
+
+    public void setDetectionTool(String detectionTool) {
+        this.detection_tool = detectionTool;
     }
 }
 
