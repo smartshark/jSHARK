@@ -19,7 +19,7 @@ Then you need to integrate the installed library and morphia as a dependency to 
     <dependency>
         <groupId>io.github.smartshark</groupId>
         <artifactId>jSHARK</artifactId>
-        <version>2.0.4</version>
+        <version>2.0.6</version>
     </dependency>
     <dependency>
         <groupId>org.mongodb.morphia</groupId>
