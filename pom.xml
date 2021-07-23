@@ -149,6 +149,13 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <!-- no pinentry for gpg in the workflow -->
+                                <configuration>
+                                  <gpgArguments>
+                                    <arg>--pinentry-mode</arg>
+                                    <arg>loopback</arg>
+                                  </gpgArguments>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
